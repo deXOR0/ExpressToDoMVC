@@ -1,0 +1,36 @@
+<%- include('header') -%>
+<div class="jumbotron jumbotron-fluid mt-5">
+    <div class="container">
+        <h1 class="display-4">
+            Welcome, <%= locals.name || "Unauthorized User!" %>
+        </h1>
+        <p class="lead">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel ipsam
+            laboriosam repellat earum doloremque, facilis laudantium deserunt
+            necessitatibus ducimus voluptate, impedit, dolorem quam quaerat?
+            Amet sunt quisquam sed debitis. Quos.
+        </p>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <% if (locals.name) { %>
+    <a href="/create-task">
+        <div class="btn btn-primary">Add new Task</div>
+    </a>
+    <div class="card-container mt-4">
+        <% if (locals.tasks) { %> <% tasks.forEach(task => { %>
+        <div class="card" style="width: 18rem">
+            <div class="card-body">
+                <h5 class="card-title"><%= task.title %></h5>
+                <p class="card-text"><%= task.detail %></p>
+                <a href="/task/<%= task.id %>/delete" class="btn btn-primary"
+                    >Complete Task</a
+                >
+            </div>
+        </div>
+        <% }) %> <% } %>
+    </div>
+    <% } %>
+</div>
+<%- include('footer') -%>

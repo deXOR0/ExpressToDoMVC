@@ -1,0 +1,36 @@
+<%- include('header') -%>
+<div class="form-container">
+    <div class="login-form">
+        <form method="POST" action="/auth/register">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    aria-describedby="usernameHelp"
+                    name="username"
+                />
+                <div id="usernameHelp" class="form-text">
+                    Please input your full name here
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                    >Password</label
+                >
+                <input
+                    type="password"
+                    class="form-control"
+                    id="exampleInputPassword1"
+                    name="password"
+                />
+            </div>
+            <div class="mb-3" id="sign-up-button">
+                <a href="/login">Already have an account? Sign in here!</a>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>
+<%- include('footer') -%>
